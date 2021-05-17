@@ -39,6 +39,21 @@ $ python manage.py runserver
 ```
 > Go to localhost:8000
 
+## OR
+```shell
+$ docker build -t web:latest .
+$ docker run -d --name django-docker -e "PORT=8765" -e "DEBUG=1" -p 8007:8765 web:latest
+```
+> Go to localhost:8007
+
+## For Stopping Docker Server
+```shell
+$ docker stop django-docker
+$ docker rm django-docker
+```
+
+
+
 
 ---
 
