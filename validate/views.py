@@ -18,7 +18,7 @@ from django.http import JsonResponse
 def inputexcel(request): #function of accepting excelsheet and returing error json data
     if request.method == "POST":
         data = request.FILES.get('excelfile')
-        if data.name.endswith('.xlsx'):
+        if data.name.endswith('.xlsx') and data:
             fileloc = os.path.join(MEDIA_ROOT,"excelsheets")
             if(os.path.isdir(fileloc) is False):
                 os.makedirs(fileloc)
