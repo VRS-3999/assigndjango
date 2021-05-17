@@ -23,12 +23,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-lr*cc&ki0vdb(ghme&ve=fu$mavco-q8h%l7fm=md2iil7g%kj'
+#SECRET_KEY = 'django-insecure-lr*cc&ki0vdb(ghme&ve=fu$mavco-q8h%l7fm=md2iil7g%kj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+#DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','developershome.herokuapp.com']
+SECRET_KEY = os.environ.get('SECRET_KEY', default='django-insecure-lr*cc&ki0vdb(ghme&ve=fu$mavco-q8h%l7fm=md2iil7g%kj')
+
+DEBUG = int(os.environ.get('DEBUG', default=0))
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','developershome.herokuapp.com','assigndjango.herokuapp.com']
 
 
 # Application definition
@@ -77,7 +81,7 @@ WSGI_APPLICATION = 'excelvalidate.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
+"""
 #credentials of heroku database
 DATABASES = {
     'default': {
@@ -91,15 +95,19 @@ DATABASES = {
 
 
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
-
 """
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-"""
+
+DATABASE_URL = os.environ.get('DATABASE_URL')
+db_from_env = dj_database_url.config(default=DATABASE_URL, conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
