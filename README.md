@@ -23,6 +23,11 @@
 ## Features 📋
 ⚡️ Correct data is saved in databse for future use.\
 ⚡️ Can Implement functions to make use of data to its best.\
+⚡️ Admin URL for both platform 
+> https://assigndjango.herokuapp.com/admin/ \
+> https://developershome.herokuapp.com/admin/ \
+⚡️ Username : test \
+⚡️ Password : iamawesome 
 
 ## Installation 📦
 
