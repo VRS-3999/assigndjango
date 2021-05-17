@@ -1,4 +1,5 @@
 # Django based Excelsheet Data Validator
+> Use Docker Deployed API as it is more stable and will not run in 503 Temporary error in Heroku free dyno
 > https://assigndjango.herokuapp.com/api/upload  (Docker Deployed on Heroku)\
 > https://developershome.herokuapp.com/api/upload  (Normally Deployed on Heroku)
 
