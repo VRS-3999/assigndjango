@@ -1,7 +1,11 @@
 # Django based Excelsheet Data Validator
-> https://developershome.herokuapp.com/api/upload
+> https://assigndjango.herokuapp.com/api/upload  (Docker Deployed on Heroku)\
+> https://developershome.herokuapp.com/api/upload  (Normally Deployed on Heroku)
 
-### POSTMAN Preview
+### POSTMAN Preview for Docker Deployed Django app on Heroku
+<img src="testimages/docker_postman.JPG" width="900">
+
+### POSTMAN Preview for Normal Deployed Django app on Heroku
 <img src="testimages/postman.JPG" width="900">
 
 ## Features 📋
@@ -14,7 +18,7 @@
 
 
 ### Save Data Preview
-<img src="testimages/admin data.JPG" width="900">
+<img src="testimages/docker_admin_data.JPG" width="900">
 
 ## Features 📋
 ⚡️ Correct data is saved in databse for future use.\
